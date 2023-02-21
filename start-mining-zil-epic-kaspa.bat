@@ -1,0 +1,18 @@
+:: This is an example you can edit and use
+:: There are numerous parameters you can set, please check Help and Examples folder
+:: Start miner with administrator privileges to enable gpu-boost
+
+setx GPU_MAX_HEAP_SIZE 100
+setx GPU_MAX_USE_SYNC_OBJECTS 1
+setx GPU_SINGLE_ALLOC_PERCENT 100
+setx GPU_MAX_ALLOC_PERCENT 100
+setx GPU_MAX_SINGLE_ALLOC_PERCENT 100
+
+@echo off
+cd %~dp0
+cls
+
+:: use --gpu-buffer-mode 1 if your GPU doesn't have enough VRAM to hold buffers
+
+SRBMiner-MULTI.exe --disable-cpu --algorithm progpow_epic --pool 51pool.online:4416 --wallet 51POOL-USERNAME --algorithm kaspa --pool de.kaspa.herominers.com:1206 --wallet KASPA-WALLET --zil-enable --zil-pool eu.crazypool.org:5005 --zil-wallet ZIL-WALLET --zil-esm 2 --multi-algorithm-job-mode 3
+pause
